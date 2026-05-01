@@ -1,5 +1,5 @@
 # YOLO365 — robots.txt
-# https://yolo365bookmaker.live
+# https://yolo365info.live
 
 User-agent: *
 Allow: /
@@ -68,5 +68,5 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://yolo365bookmaker.live/sitemap.xml
-Host: https://yolo365bookmaker.live
+Sitemap: https://yolo365info.live/sitemap.xml
+Host: https://yolo365info.live

@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 import { posts, categories } from "@/blog/posts";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
-const SITE = "https://yolo365bookmaker.live";
+const SITE = "https://yolo365info.live";
 
 const Blog = () => {
   const [cat, setCat] = useState<(typeof categories)[number]>("All");
