@@ -14,7 +14,7 @@ const Header = () => {
           </div>
           <div className="leading-none">
             <div className="text-base font-semibold text-foreground tracking-tight">YOLO<span className="text-gold">365</span></div>
-            <div className="text-[8px] text-muted-foreground tracking-[0.22em] mt-0.5">BOOKMAKER</div>
+            <div className="text-[8px] text-muted-foreground tracking-[0.22em] mt-0.5">BOOK</div>
           </div>
         </button>
 
