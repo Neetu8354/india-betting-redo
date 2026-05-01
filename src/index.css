@@ -2,104 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Yolo365 — Premium Cricket & Casino betting design system. All colors HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 4%;
+    --foreground: 45 90% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 7%;
+    --card-foreground: 45 90% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 45 90% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 95% 55%;        /* Gold */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 75% 45%;       /* Deep Red */
+    --secondary-foreground: 45 95% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 20% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 70% 45%;        /* Casino Green */
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 40% 18%;
+    --input: 0 0% 14%;
+    --ring: 45 95% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Brand tokens */
+    --gold: 45 95% 55%;
+    --gold-glow: 45 100% 65%;
+    --gold-deep: 38 80% 42%;
+    --crimson: 0 80% 42%;
+    --crimson-deep: 0 75% 28%;
+    --whatsapp: 142 70% 45%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(38 90% 48%) 50%, hsl(45 100% 65%) 100%);
+    --gradient-crimson: linear-gradient(135deg, hsl(0 80% 42%) 0%, hsl(0 70% 28%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 4% / 0.2) 0%, hsl(0 0% 4% / 0.85) 80%, hsl(0 0% 4%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 9%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-gold-text: linear-gradient(180deg, hsl(45 100% 75%) 0%, hsl(45 95% 55%) 50%, hsl(38 80% 42%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    --shadow-gold: 0 10px 40px -10px hsl(45 95% 55% / 0.45);
+    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.7);
+    --shadow-glow: 0 0 60px hsl(45 100% 65% / 0.35);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(ellipse at top, hsl(0 60% 8% / 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom, hsl(45 60% 6% / 0.3) 0%, transparent 60%),
+      hsl(var(--background));
+  }
+  h1, h2, h3, h4 { font-family: 'Poppins', 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .text-gold {
+    background: var(--gradient-gold-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gold { background: var(--gradient-gold); }
+  .bg-crimson { background: var(--gradient-crimson); }
+  .card-premium {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  .card-premium:hover {
+    border-color: hsl(var(--gold) / 0.6);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-4px);
+  }
+  .btn-glow { box-shadow: var(--shadow-gold); }
+  .marquee {
+    animation: marquee 40s linear infinite;
   }
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.6); }
+  50% { box-shadow: 0 0 0 18px hsl(var(--gold) / 0); }
+}
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.6); }
+  50% { box-shadow: 0 0 0 18px hsl(var(--whatsapp) / 0); }
+}
+.animate-pulse-gold { animation: pulse-gold 2s infinite; }
+.animate-pulse-wa { animation: pulse-wa 2s infinite; }
