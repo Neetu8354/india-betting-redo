@@ -18,7 +18,7 @@ const CTABanner = lazy(() => import("@/components/CTABanner"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WhatsAppChatbot = lazy(() => import("@/components/WhatsAppChatbot"));
 
-const SITE = "https://yolo365bookmaker.live";
+const SITE = "https://yolo365info.live";
 
 const Index = () => {
   const homeLd = {
