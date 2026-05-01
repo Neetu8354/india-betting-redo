@@ -7,38 +7,41 @@ const Header = () => {
   const nav = ["Sports", "Cricket", "Live Casino", "Slots", "Promotions", "Support"];
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/90 border-b hairline">
-      <div className="container flex items-center justify-between h-12">
-        <button onClick={openWhatsApp} className="flex items-center gap-2" aria-label="Yolo365 home">
-          <div className="w-7 h-7 rounded bg-gold flex items-center justify-center font-bold text-sm text-primary-foreground">
+      <div className="container flex items-center justify-between h-16">
+        <button onClick={openWhatsApp} className="flex items-center gap-2.5" aria-label="Yolo365 home">
+          <div className="w-9 h-9 rounded-md bg-gold flex items-center justify-center font-bold text-lg text-primary-foreground">
             Y
           </div>
-          <div className="text-base font-semibold text-foreground tracking-tight leading-none">YOLO<span className="text-gold">365</span></div>
+          <div className="leading-none">
+            <div className="text-lg font-semibold text-foreground tracking-tight">YOLO<span className="text-gold">365</span></div>
+            <div className="text-[9px] text-muted-foreground tracking-[0.22em] mt-0.5">BOOKMAKER</div>
+          </div>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-1">
           {nav.map((n) => (
             <button
               key={n}
               onClick={openWhatsApp}
-              className="px-2.5 py-1.5 text-xs font-medium text-foreground/75 hover:text-gold transition-colors"
+              className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-gold transition-colors"
             >
               {n}
             </button>
           ))}
         </nav>
 
-        <div className="flex items-center gap-1.5">
-          <button onClick={openWhatsApp} className="hidden md:inline-flex items-center justify-center w-7 h-7 rounded text-foreground/60 hover:text-gold transition-colors" aria-label="Search">
-            <Search className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-2">
+          <button onClick={openWhatsApp} className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-md text-foreground/60 hover:text-gold transition-colors" aria-label="Search">
+            <Search className="w-4 h-4" />
           </button>
-          <button onClick={openWhatsApp} className="hidden md:inline-flex items-center gap-1.5 px-3 h-7 rounded border hairline text-foreground/85 hover:text-gold hover:border-gold/40 text-xs font-medium transition-colors">
-            <User className="w-3.5 h-3.5" /> Login
+          <button onClick={openWhatsApp} className="hidden md:inline-flex items-center gap-2 px-4 h-9 rounded-md border hairline text-foreground/85 hover:text-gold hover:border-gold/40 text-sm font-medium transition-colors">
+            <User className="w-4 h-4" /> Login
           </button>
-          <button onClick={openWhatsApp} className="inline-flex items-center gap-1.5 px-3 h-7 rounded bg-gold text-primary-foreground font-semibold text-xs hover:opacity-90 transition-opacity">
-            <MessageCircle className="w-3.5 h-3.5" /> Get ID
+          <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-4 h-9 rounded-md bg-gold text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
+            <MessageCircle className="w-4 h-4" /> Get ID
           </button>
-          <button onClick={() => setOpen(!open)} className="lg:hidden p-1.5 text-foreground/80">
-            {open ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-foreground/80">
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
