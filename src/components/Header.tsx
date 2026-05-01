@@ -7,14 +7,14 @@ const Header = () => {
   const nav = ["Sports", "Cricket", "Live Casino", "Slots", "Promotions", "Support"];
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/90 border-b hairline">
-      <div className="container flex items-center justify-between h-16">
-        <button onClick={openWhatsApp} className="flex items-center gap-2.5" aria-label="Yolo365 home">
-          <div className="w-9 h-9 rounded-md bg-gold flex items-center justify-center font-bold text-lg text-primary-foreground">
+      <div className="container flex items-center justify-between h-14">
+        <button onClick={openWhatsApp} className="flex items-center gap-2" aria-label="Yolo365 home">
+          <div className="w-8 h-8 rounded-md bg-gold flex items-center justify-center font-bold text-base text-primary-foreground">
             Y
           </div>
           <div className="leading-none">
-            <div className="text-lg font-semibold text-foreground tracking-tight">YOLO<span className="text-gold">365</span></div>
-            <div className="text-[9px] text-muted-foreground tracking-[0.22em] mt-0.5">BOOKMAKER</div>
+            <div className="text-base font-semibold text-foreground tracking-tight">YOLO<span className="text-gold">365</span></div>
+            <div className="text-[8px] text-muted-foreground tracking-[0.22em] mt-0.5">BOOKMAKER</div>
           </div>
         </button>
 
