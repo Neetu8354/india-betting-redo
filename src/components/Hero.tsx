@@ -17,17 +17,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
 
         <div className="container relative z-10 h-full flex flex-col justify-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 self-start pl-1.5 pr-3.5 py-1 rounded-full bg-background/70 border border-secondary/50 backdrop-blur text-sm font-semibold text-foreground mb-5 shadow-lg">
-            <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-secondary text-secondary-foreground text-[10px] font-bold tracking-[0.15em] uppercase">
-              <span className="relative flex w-1.5 h-1.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
-              </span>
-              Live
-            </span>
-            <span className="text-gold">IPL 2026 Season</span>
-          </div>
-
           <h1 className="text-4xl md:text-6xl lg:text-[68px] font-semibold leading-[1.04] mb-5 tracking-tight">
             India's most trusted<br />
             <span className="text-gold font-semibold">cricket betting</span> exchange
