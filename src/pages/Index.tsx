@@ -38,9 +38,8 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO
         title="YOLO365 — India's #1 Online Cricket Betting ID, IPL & Live Casino 2026"
-        description="YOLO365 is India's most trusted online cricket betting exchange. Get your IPL betting ID on WhatsApp in 60 seconds, instant INR deposits, 5-minute withdrawals, live Teen Patti, Andar Bahar & 1000+ casino games."
+        description="YOLO365 is India's trusted online cricket betting exchange. Get your IPL betting ID on WhatsApp in 60 seconds, instant INR deposits & 5-minute withdrawals."
         canonical="/"
-        keywords="YOLO365, online cricket betting India, IPL 2026 betting ID, live casino India, Teen Patti online, Andar Bahar real money, kabaddi betting, instant withdrawal betting"
         jsonLd={homeLd}
       />
       <TickerBar />

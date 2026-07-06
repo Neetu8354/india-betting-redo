@@ -22,7 +22,6 @@ const SEO = ({ title, description, canonical, image = `${SITE}/og-image.jpg`, ty
     <Helmet prioritizeSeoTags>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
       <meta property="og:title" content={title} />
