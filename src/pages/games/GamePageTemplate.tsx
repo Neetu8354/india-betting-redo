@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 import { openWhatsApp } from "@/lib/wa";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 
-const SITE = "https://yolo365info.live";
+const SITE = "https://www.yolo365info.live";
 
 export type GamePageProps = {
   slug: string;

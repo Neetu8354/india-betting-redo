@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
 import { MessageCircle, Mail, Clock, Globe2 } from "lucide-react";
 
-const SITE = "https://yolo365info.live";
+const SITE = "https://www.yolo365info.live";
 
 const Contact = () => {
   const ld = [

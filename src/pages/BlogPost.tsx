@@ -7,7 +7,7 @@ import { posts } from "@/blog/posts";
 import { Calendar, Clock, ArrowLeft, MessageCircle } from "lucide-react";
 import { openWhatsApp } from "@/lib/wa";
 
-const SITE = "https://yolo365info.live";
+const SITE = "https://www.yolo365info.live";
 
 // Lightweight markdown-ish renderer (## heading, paragraphs, - list, [text](url))
 const renderContent = (md: string) => {
