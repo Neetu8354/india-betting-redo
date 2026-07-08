@@ -73,7 +73,7 @@ const GamePageTemplate = ({
 
   return (
     <div className="min-h-screen">
-      <SEO title={title} description={description} canonical={`/games/${slug}`} keywords={keywords} jsonLd={ld} image={`${SITE}/og-image.jpg`} />
+      <SEO title={title} description={description} canonical={`/games/${slug}`} keywords={keywords} jsonLd={ld} image={`${SITE}/og-image.svg`} />
       <Header />
       <main className="container py-12">
         <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground mb-5">

@@ -14,7 +14,7 @@ type Props = {
 
 const SITE = "https://www.yolo365info.live";
 
-const SEO = ({ title, description, canonical, image = `${SITE}/og-image.jpg`, type = "website", publishedTime, modifiedTime, keywords, jsonLd }: Props) => {
+const SEO = ({ title, description, canonical, image = `${SITE}/og-image.svg`, type = "website", publishedTime, modifiedTime, keywords, jsonLd }: Props) => {
   const url = canonical.startsWith("http") ? canonical : `${SITE}${canonical}`;
   const imgUrl = image.startsWith("http") ? image : `${SITE}${image}`;
   const ldArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
