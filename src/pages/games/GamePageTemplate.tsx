@@ -92,7 +92,7 @@ const GamePageTemplate = ({
             <Link to="/blog" className="inline-flex items-center px-6 h-12 rounded-md border hairline hover:border-gold/40 font-medium">Read tips</Link>
           </div>
           <img
-            src="/og-image.jpg"
+            src="/placeholder.svg"
             alt={imageAlt}
             width={1200}
             height={630}
