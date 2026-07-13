@@ -1,0 +1,36 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Accent shapes -->
+  <circle cx="100" cy="100" r="80" fill="#d4af37" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="120" fill="#d4af37" opacity="0.08"/>
+  
+  <!-- Main text -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    YOLO365
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="36" text-anchor="middle" fill="#d4af37">
+    India's #1 Online Betting Exchange
+  </text>
+  
+  <!-- Description -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#cccccc">
+    Cricket Betting • Live Casino • Instant Payouts
+  </text>
+  
+  <!-- CTA -->
+  <rect x="400" y="420" width="400" height="60" rx="8" fill="#d4af37"/>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#0d0d12">
+    Get Your Betting ID Now
+  </text>
+</svg>
