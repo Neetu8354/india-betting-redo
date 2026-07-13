@@ -1,5 +1,5 @@
 import { Zap, Shield, Headphones, Wallet, Trophy, Lock } from "lucide-react";
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 
 const features = [
   { icon: Zap, title: "Instant deposits", desc: "UPI, PhonePe, GPay, Paytm and IMPS — funds credited in under 30 seconds." },
@@ -18,13 +18,13 @@ const Features = () => (
     </div>
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {features.map((f) => (
-        <button onClick={openWhatsApp} key={f.title} className="card-premium rounded-lg p-6 text-left">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" key={f.title} className="card-premium rounded-lg p-6 text-left">
           <div className="w-10 h-10 rounded-md bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4">
             <f.icon className="w-4.5 h-4.5" strokeWidth={1.75} />
           </div>
           <h3 className="font-semibold text-base mb-1.5 tracking-tight">{f.title}</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-        </button>
+        </a>
       ))}
     </div>
   </section>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import promoCasino from "@/assets/promo-casino.jpg";
 import promoWelcome from "@/assets/promo-welcome.jpg";
 import promoIpl from "@/assets/promo-ipl.jpg";
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
@@ -24,7 +24,7 @@ const PromoSlider = () => {
           <div className="eyebrow mb-1">Featured</div>
           <h2 className="text-xl md:text-2xl font-semibold tracking-tight">Current promotions</h2>
         </div>
-        <button onClick={openWhatsApp} className="hidden md:inline-flex text-sm text-foreground/70 hover:text-gold transition-colors">View all →</button>
+        <a href="/promotions" className="hidden md:inline-flex text-sm text-foreground/70 hover:text-gold transition-colors">View all →</a>
       </div>
       <div className="relative rounded-lg overflow-hidden border hairline">
         <div className="relative aspect-[21/9] md:aspect-[24/8]">
@@ -36,9 +36,9 @@ const PromoSlider = () => {
                 <div className="eyebrow mb-2">{s.eyebrow}</div>
                 <h3 className="text-2xl md:text-4xl font-semibold tracking-tight mb-3">{s.title}</h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-5 max-w-md">{s.sub}</p>
-                <button onClick={openWhatsApp} className="self-start px-5 h-10 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90 transition-opacity text-sm">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="self-start inline-flex items-center px-5 h-10 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90 transition-opacity text-sm">
                   {s.cta}
-                </button>
+                </a>
               </div>
             </div>
           ))}

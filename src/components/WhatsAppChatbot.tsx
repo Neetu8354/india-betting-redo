@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
-import { openWhatsApp } from "@/lib/wa";
+import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
 
 const WhatsAppChatbot = () => {
   const [open, setOpen] = useState(false);
@@ -32,15 +32,15 @@ const WhatsAppChatbot = () => {
             </div>
             <div className="flex flex-wrap gap-1.5 pt-1">
               {["Get my ID", "IPL betting", "Casino games", "Bonus offers"].map((q) => (
-                <button key={q} onClick={openWhatsApp} className="text-[11px] px-2.5 py-1 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-primary-foreground transition-colors">
+                <a key={q} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-[11px] px-2.5 py-1 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-primary-foreground transition-colors">
                   {q}
-                </button>
+                </a>
               ))}
             </div>
           </div>
-          <button onClick={openWhatsApp} className="w-full bg-whatsapp text-white py-3 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp text-white py-3 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
             <MessageCircle className="w-4 h-4" /> Continue on WhatsApp
-          </button>
+          </a>
         </div>
       )}
 

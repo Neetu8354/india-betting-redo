@@ -1,4 +1,4 @@
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { MessageCircle } from "lucide-react";
 
 const steps = [
@@ -25,9 +25,9 @@ const HowItWorks = () => (
         ))}
       </div>
       <div className="text-center mt-10">
-        <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-6 h-11 rounded-md bg-gold text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 h-11 rounded-md bg-gold text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
           <MessageCircle className="w-4 h-4" /> Start on WhatsApp
-        </button>
+        </a>
       </div>
     </div>
   </section>

@@ -100,9 +100,9 @@ const Contact = () => {
         <section className="rounded-2xl border hairline bg-card/40 p-8 text-center">
           <h2 className="text-xl font-bold mb-2">Need help right now?</h2>
           <p className="text-muted-foreground text-sm mb-5">Our team is online 24×7 on WhatsApp.</p>
-          <button onClick={openWhatsApp} className="px-7 h-12 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-7 h-12 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90">
             Chat on WhatsApp
-          </button>
+          </a>
         </section>
       </main>
       <Footer />

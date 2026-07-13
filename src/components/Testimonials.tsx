@@ -1,4 +1,4 @@
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { Star } from "lucide-react";
 
 const reviews = [
@@ -16,14 +16,14 @@ const Testimonials = () => (
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       {reviews.map((r) => (
-        <button onClick={openWhatsApp} key={r.n} className="card-premium rounded-lg p-6 text-left">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" key={r.n} className="card-premium rounded-lg p-6 text-left">
           <div className="flex gap-0.5 mb-3 text-gold">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
           </div>
           <p className="text-sm text-foreground/85 mb-4 leading-relaxed">"{r.t}"</p>
           <div className="text-sm font-medium">{r.n}</div>
           <div className="text-xs text-muted-foreground">{r.c}</div>
-        </button>
+        </a>
       ))}
     </div>
   </section>

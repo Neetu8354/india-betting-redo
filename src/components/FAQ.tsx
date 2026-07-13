@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { openWhatsApp } from "@/lib/wa";
+import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
 
 const faqs = [
   { q: "How do I get a Yolo365 betting ID?", a: "Click any 'Get ID' button on this page. It opens WhatsApp where our team will share your ID and password within 60 seconds." },
@@ -33,9 +33,9 @@ const FAQ = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <button onClick={openWhatsApp} className="text-sm text-foreground/70 hover:text-gold transition-colors">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-gold transition-colors">
           Still have questions? Talk to us on WhatsApp →
-        </button>
+        </a>
       </div>
     </section>
   );

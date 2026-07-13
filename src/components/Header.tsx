@@ -70,9 +70,9 @@ const Header = () => {
                   {n.label}
                 </Link>
               ) : (
-                <button key={n.label} onClick={openWhatsApp} className="text-left py-2.5 text-sm font-medium text-foreground/80 hover:text-gold">
+                <a key={n.label} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-left py-2.5 text-sm font-medium text-foreground/80 hover:text-gold">
                   {n.label}
-                </button>
+                </a>
               )
             )}
           </div>

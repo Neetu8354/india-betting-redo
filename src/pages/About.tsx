@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { ShieldCheck, Award, Users, Zap, Lock, HeartHandshake } from "lucide-react";
 
 const SITE = "https://www.yolo365info.live";
@@ -97,9 +97,9 @@ const About = () => {
         <section className="rounded-2xl border hairline bg-card/40 p-8 md:p-10 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to join India's #1 cricket betting community?</h2>
           <p className="text-muted-foreground mb-6">Get your YOLO365 betting ID on WhatsApp in 60 seconds.</p>
-          <button onClick={openWhatsApp} className="px-7 h-12 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-7 h-12 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
             Get ID on WhatsApp
-          </button>
+          </a>
         </section>
       </main>
       <Footer />

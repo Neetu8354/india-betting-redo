@@ -1,4 +1,4 @@
-import { openWhatsApp } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 
 const providers = ["EVOLUTION", "PRAGMATIC", "EZUGI", "SUPERSPADE", "BETGAMES", "PLAYTECH", "MICROGAMING", "NETENT", "RED TIGER", "HOTROAD"];
 
@@ -10,9 +10,9 @@ const Providers = () => (
     <div className="relative">
       <div className="flex gap-14 marquee whitespace-nowrap">
         {[...providers, ...providers].map((p, i) => (
-          <button key={i} onClick={openWhatsApp} className="text-sm md:text-base font-semibold text-muted-foreground/60 hover:text-gold transition-colors tracking-[0.2em]">
+          <a key={i} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-semibold text-muted-foreground/60 hover:text-gold transition-colors tracking-[0.2em]">
             {p}
-          </button>
+          </a>
         ))}
       </div>
     </div>
