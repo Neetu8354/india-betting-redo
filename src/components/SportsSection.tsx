@@ -40,7 +40,7 @@ const SportsSection = () => (
             <div className="text-[11px] text-muted-foreground mt-0.5">{s.tag}</div>
           </div>
         </a>
-      ))
+      ))}
     </div>
   </section>
 );
