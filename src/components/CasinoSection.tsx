@@ -7,12 +7,12 @@ import dragontiger from "@/assets/casino-dragontiger.jpg";
 import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
 
 const games = [
-  { img: teenpatti, name: "Teen Patti", alt: "Play Teen Patti online real money live on yolo365info.live", tag: "Indian classic", min: "₹100" },
-  { img: andarbahar, name: "Andar Bahar", alt: "Andar Bahar online live casino with Indian dealers on yolo365info.live", tag: "Live dealer", min: "₹50" },
-  { img: roulette, name: "Roulette", alt: "Live European roulette online real money on yolo365info.live", tag: "European · Auto", min: "₹100" },
-  { img: dragontiger, name: "Dragon Tiger", alt: "Dragon Tiger live casino card game on yolo365info.live", tag: "Quick cards", min: "₹50" },
-  { img: blackjack, name: "Blackjack", alt: "Live blackjack 21 online real money tables on yolo365info.live", tag: "21 live tables", min: "₹200" },
-  { img: slots, name: "Lucky 777 Slots", alt: "1000+ online slots — Lucky 777 jackpot games on yolo365info.live", tag: "1,000+ slots", min: "₹10" },
+  { img: teenpatti, name: "Teen Patti", alt: "Live Teen Patti table with cards and chips", tag: "Indian classic", min: "₹100", href: "/games/teen-patti" },
+  { img: andarbahar, name: "Andar Bahar", alt: "Andar Bahar card game with Indian dealer", tag: "Live dealer", min: "₹50", href: "/games/andar-bahar" },
+  { img: roulette, name: "Roulette", alt: "European roulette wheel spinning on green table", tag: "European · Auto", min: "₹100", href: WHATSAPP_LINK },
+  { img: dragontiger, name: "Dragon Tiger", alt: "Dragon Tiger cards dealt on a casino table", tag: "Quick cards", min: "₹50", href: WHATSAPP_LINK },
+  { img: blackjack, name: "Blackjack", alt: "Blackjack hand showing ace and king on felt table", tag: "21 live tables", min: "₹200", href: WHATSAPP_LINK },
+  { img: slots, name: "Lucky 777 Slots", alt: "Colourful slot machine reels with cherry and bar symbols", tag: "1,000+ slots", min: "₹10", href: WHATSAPP_LINK },
 ];
 
 const CasinoSection = () => (
@@ -28,7 +28,7 @@ const CasinoSection = () => (
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         {games.map((g) => (
-          <a key={g.name} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="card-premium rounded-lg overflow-hidden text-left group">
+          <a key={g.name} href={g.href} {...(g.href === WHATSAPP_LINK ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="card-premium rounded-lg overflow-hidden text-left group">
             <div className="aspect-[4/3] overflow-hidden relative">
               <img src={g.img} alt={g.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width={400} height={300} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

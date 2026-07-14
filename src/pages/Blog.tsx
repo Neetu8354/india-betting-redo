@@ -79,7 +79,7 @@ const Blog = () => {
           {filtered.map((p) => (
             <article key={p.slug} className="group border hairline rounded-lg overflow-hidden bg-card/40 hover:border-gold/40 transition-colors flex flex-col">
               <Link to={`/blog/${p.slug}`} className="block aspect-[16/9] overflow-hidden bg-muted">
-                <img src={p.cover} alt={`${p.title} — YOLO365 cricket betting & live casino blog`} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width={640} height={360} />
+                <img src={p.cover} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width={640} height={360} />
               </Link>
               <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-center gap-2 text-[10px] text-muted-foreground uppercase tracking-wider mb-3">

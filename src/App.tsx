@@ -15,6 +15,7 @@ const Cricket = lazy(() => import("./pages/games/Cricket.tsx"));
 const TeenPatti = lazy(() => import("./pages/games/TeenPatti.tsx"));
 const Aviator = lazy(() => import("./pages/games/Aviator.tsx"));
 const AndarBahar = lazy(() => import("./pages/games/AndarBahar.tsx"));
+const Promotions = lazy(() => import("./pages/Promotions.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/games/teen-patti" element={<TeenPatti />} />
               <Route path="/games/aviator" element={<Aviator />} />
               <Route path="/games/andar-bahar" element={<AndarBahar />} />
+              <Route path="/promotions" element={<Promotions />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

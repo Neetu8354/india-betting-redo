@@ -14,6 +14,7 @@ const Contact = () => {
       "@id": `${SITE}/contact#webpage`,
       url: `${SITE}/contact`,
       name: "Contact YOLO365 — 24×7 WhatsApp Support",
+      isPartOf: { "@id": `${SITE}/#website` },
       inLanguage: "en-IN",
     },
     {
@@ -31,6 +32,14 @@ const Contact = () => {
           contactOption: "TollFree",
           url: WHATSAPP_LINK,
         },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+        { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE}/contact` },
       ],
     },
   ];

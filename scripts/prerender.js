@@ -48,46 +48,45 @@ const routes = [
     title: "YOLO365 Blog — IPL Betting Tips, Cricket Strategy & Live Casino Guides 2026",
     description: "Expert IPL 2026 betting tips, cricket strategy, Teen Patti & live casino guides from YOLO365 — India's #1 cricket betting exchange. New articles every week.",
   },
+  {
+    path: '/promotions',
+    title: "YOLO365 Promotions — Welcome Bonus, IPL Offers & Cashback 2026",
+    description: "Grab YOLO365 bonuses — 200% welcome bonus up to ₹15,000, IPL 2026 match-day offers, 10% weekly cashback, refer & earn. Claim now on WhatsApp.",
+  },
 ];
+
+const SITE = 'https://www.yolo365info.live';
 
 function generatePrerenderedHTML(baseHTML, route) {
   let html = baseHTML;
-  
-  // Replace meta tags with route-specific content
-  html = html.replace(
-    /<meta name="description" content="[^"]*"/,
-    `<meta name="description" content="${route.description}"`
-  );
-  
+  const fullUrl = route.path === '/' ? `${SITE}/` : `${SITE}${route.path}`;
+
+  // Replace title
   html = html.replace(
     /<title>[^<]*<\/title>/,
     `<title>${route.title}</title>`
   );
-  
+
+  // Inject meta description, canonical, og:url right after <title>
+  const seoTags = [
+    `<meta name="description" content="${route.description}">`,
+    `<link rel="canonical" href="${fullUrl}">`,
+    `<meta property="og:url" content="${fullUrl}">`,
+    `<meta property="og:title" content="${route.title}">`,
+    `<meta property="og:description" content="${route.description}">`,
+    `<meta name="twitter:title" content="${route.title}">`,
+    `<meta name="twitter:description" content="${route.description}">`,
+  ].join('\n    ');
+
   html = html.replace(
-    /<meta property="og:title" content="[^"]*"/,
-    `<meta property="og:title" content="${route.title}"`
+    `<title>${route.title}</title>`,
+    `<title>${route.title}</title>\n    ${seoTags}`
   );
-  
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*"/,
-    `<meta property="og:description" content="${route.description}"`
-  );
-  
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*"/,
-    `<meta name="twitter:title" content="${route.title}"`
-  );
-  
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*"/,
-    `<meta name="twitter:description" content="${route.description}"`
-  );
-  
-  // Add initial content hint in noscript for crawlers
+
+  // Update noscript content for crawlers
   const noscriptContent = `<noscript><h1>${route.title}</h1><p>${route.description}</p></noscript>`;
   html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, noscriptContent);
-  
+
   return html;
 }
 

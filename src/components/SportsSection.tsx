@@ -7,12 +7,12 @@ import basketball from "@/assets/sport-basketball.jpg";
 import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
 
 const sports = [
-  { img: cricket, name: "Cricket", alt: "Bet on live cricket — IPL 2026 and international matches on yolo365info.live", tag: "IPL 2026 · International", live: 42 },
-  { img: kabaddi, name: "Kabaddi", alt: "Pro Kabaddi League online betting on yolo365info.live", tag: "Pro Kabaddi League", live: 8 },
-  { img: tennis, name: "Tennis", alt: "Live tennis betting — ATP, WTA and Grand Slam odds on yolo365info.live", tag: "ATP · WTA · Grand Slam", live: 15 },
-  { img: horse, name: "Horse Racing", alt: "Indian Derby horse racing online betting on yolo365info.live", tag: "Indian Derby", live: 12 },
-  { img: esports, name: "Esports", alt: "Esports betting — BGMI, Valorant, CS2 live odds on yolo365info.live", tag: "BGMI · Valorant · CS2", live: 24 },
-  { img: basketball, name: "Basketball", alt: "NBA and Indian basketball league online betting on yolo365info.live", tag: "NBA · Indian League", live: 9 },
+  { img: cricket, name: "Cricket", alt: "Cricket players on field during an IPL T20 match", tag: "IPL 2026 · International", live: 42, href: "/games/cricket-betting" },
+  { img: kabaddi, name: "Kabaddi", alt: "Kabaddi raiders tackling in a Pro Kabaddi League match", tag: "Pro Kabaddi League", live: 8, href: WHATSAPP_LINK },
+  { img: tennis, name: "Tennis", alt: "Tennis player serving on a hard court during ATP tournament", tag: "ATP · WTA · Grand Slam", live: 15, href: WHATSAPP_LINK },
+  { img: horse, name: "Horse Racing", alt: "Horses galloping at the Indian Derby race track", tag: "Indian Derby", live: 12, href: WHATSAPP_LINK },
+  { img: esports, name: "Esports", alt: "Gamers competing in a BGMI esports tournament", tag: "BGMI · Valorant · CS2", live: 24, href: WHATSAPP_LINK },
+  { img: basketball, name: "Basketball", alt: "Basketball players during an NBA game jump ball", tag: "NBA · Indian League", live: 9, href: WHATSAPP_LINK },
 ];
 
 const SportsSection = () => (
@@ -27,7 +27,7 @@ const SportsSection = () => (
     </div>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
       {sports.map((s) => (
-        <a key={s.name} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="card-premium rounded-lg overflow-hidden text-left group">
+        <a key={s.name} href={s.href} {...(s.href === WHATSAPP_LINK ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="card-premium rounded-lg overflow-hidden text-left group">
           <div className="aspect-square overflow-hidden relative">
             <img src={s.img} alt={s.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width={400} height={400} />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
