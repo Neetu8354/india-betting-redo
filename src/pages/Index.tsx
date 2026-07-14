@@ -26,25 +26,26 @@ const Index = () => {
     "@type": "WebPage",
     "@id": `${SITE}/#webpage`,
     url: SITE,
-    name: "YOLO365 — India's #1 Online Cricket Betting ID & Live Casino",
+    name: "YOLO365 — Cricket & Gaming Information Platform",
     isPartOf: { "@id": `${SITE}/#website` },
     inLanguage: "en-IN",
     about: { "@id": `${SITE}/#organization` },
     description:
-      "YOLO365 is India's most trusted online cricket betting exchange. Get your IPL betting ID on WhatsApp in 60 seconds.",
+      "Cricket betting information, live casino guides, and gaming resources for Indian users.",
   };
 
   return (
     <div className="min-h-screen">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-primary-foreground focus:rounded-md focus:font-semibold focus:text-sm">Skip to main content</a>
       <SEO
-        title="YOLO365 — India's #1 Online Cricket Betting ID, IPL & Live Casino 2026"
-        description="YOLO365 is India's trusted online cricket betting exchange. Get your IPL betting ID on WhatsApp in 60 seconds, instant INR deposits & 5-minute withdrawals."
+        title="YOLO365 - Cricket and Gaming Information | IPL & Live Casino Guides 2026"
+        description="YOLO365 provides cricket betting information, IPL 2026 insights, live casino guides, and gaming resources for Indian users."
         canonical="/"
         jsonLd={homeLd}
       />
       <TickerBar />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Suspense fallback={null}>
           <PromoSlider />

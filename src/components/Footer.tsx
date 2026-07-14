@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { MessageCircle, Mail, Clock } from "lucide-react";
 import { posts } from "@/blog/posts";
 
@@ -9,9 +9,6 @@ const Footer = () => {
       { label: "Cricket Betting", href: "/games/cricket-betting" },
       { label: "IPL 2026 Betting", href: "/blog/ipl-2026-betting-tips-yolo365" },
       { label: "Pro Kabaddi", href: "/blog/kabaddi-betting-yolo365-pro-kabaddi-league" },
-      { label: "Tennis", href: WHATSAPP_LINK },
-      { label: "Horse Racing", href: WHATSAPP_LINK },
-      { label: "Esports", href: WHATSAPP_LINK },
     ],
     "Casino": [
       { label: "Teen Patti", href: "/games/teen-patti" },
@@ -19,13 +16,13 @@ const Footer = () => {
       { label: "Aviator", href: "/games/aviator" },
       { label: "Live Roulette", href: "/blog/online-roulette-india-strategy" },
       { label: "Dragon Tiger", href: "/blog/dragon-tiger-live-casino-india" },
-      { label: "Slots", href: WHATSAPP_LINK },
+      { label: "Live Casino Guide", href: "/blog/live-casino-india-evolution-ezugi-yolo365" },
     ],
     "Company": [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Blog", href: "/blog" },
-      { label: "IPL Betting Tips", href: "/blog/ipl-2026-betting-tips-yolo365" },
+      { label: "Promotions", href: "/promotions" },
       { label: "Get ID Guide", href: "/blog/how-to-get-yolo365-cricket-betting-id-whatsapp" },
       { label: "UPI Deposit Guide", href: "/blog/upi-deposit-betting-india-guide" },
     ],
@@ -44,13 +41,13 @@ const Footer = () => {
                 <div className="text-lg font-extrabold tracking-tight">YOLO<span className="text-gold">365</span></div>
               </div>
             </Link>
-            <p className="text-sm text-muted-foreground mb-5 max-w-sm leading-relaxed">India's trusted online cricket betting and live casino exchange. Get your IPL betting ID on WhatsApp in 60 seconds.</p>
+            <p className="text-sm text-muted-foreground mb-5 max-w-sm leading-relaxed">Cricket betting information, live casino guides, and gaming resources for Indian users.</p>
             <div className="space-y-2 text-sm">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/85 hover:text-gold transition-colors">
                 <MessageCircle className="w-4 h-4 text-gold" /> WhatsApp support
               </a>
               <div className="flex items-center gap-2 text-muted-foreground"><Clock className="w-4 h-4" /> Available 24/7</div>
-              <div className="flex items-center gap-2 text-muted-foreground"><Mail className="w-4 h-4" /> support@yolo365.live</div>
+              <div className="flex items-center gap-2 text-muted-foreground"><Mail className="w-4 h-4" /> support@yolo365info.live</div>
             </div>
           </div>
           {Object.entries(cols).map(([title, links]) => (
@@ -90,11 +87,14 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 mt-8 border-t hairline flex flex-col md:flex-row justify-between gap-4 items-center">
-          <div className="text-xs text-muted-foreground">© 2026 YOLO365. All rights reserved. Play responsibly. 18+ only.</div>
+          <div className="text-xs text-muted-foreground">© 2026 YOLO365. All rights reserved. 18+ only. Please gamble responsibly.</div>
           <div className="flex gap-6 text-xs text-muted-foreground flex-wrap justify-center">
             <Link to="/about" className="hover:text-gold transition-colors">About</Link>
             <Link to="/contact" className="hover:text-gold transition-colors">Contact</Link>
             <Link to="/blog" className="hover:text-gold transition-colors">Blog</Link>
+            <Link to="/terms" className="hover:text-gold transition-colors">Terms</Link>
+            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <Link to="/responsible-gaming" className="hover:text-gold transition-colors">Responsible Gaming</Link>
           </div>
         </div>
       </div>

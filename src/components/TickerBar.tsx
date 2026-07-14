@@ -1,21 +1,19 @@
-import { WHATSAPP_LINK } from "@/lib/wa";
-
 const items = [
-  "IND vs AUS · Live",
-  "IPL 2026 · Welcome Bonus 200%",
-  "Teen Patti Live · 24/7 Tables",
-  "Instant UPI Withdrawals",
-  "Best Cricket Odds in India",
-  "Pro Kabaddi League · Live",
-  "₹15,000 First Deposit Bonus",
+  { text: "IPL 2026 Cricket", href: "/games/cricket-betting" },
+  { text: "Teen Patti Live", href: "/games/teen-patti" },
+  { text: "Aviator Crash Game", href: "/games/aviator" },
+  { text: "Andar Bahar", href: "/games/andar-bahar" },
+  { text: "Pro Kabaddi League", href: "/blog/kabaddi-betting-yolo365-pro-kabaddi-league" },
+  { text: "Cricket Betting Tips", href: "/blog/ipl-2026-betting-tips-yolo365" },
+  { text: "UPI Deposits Supported", href: "/blog/upi-deposit-betting-india-guide" },
 ];
 
 const TickerBar = () => (
-  <div className="bg-card text-foreground/80 py-2 overflow-hidden border-b hairline">
-    <div className="flex gap-10 marquee whitespace-nowrap text-xs font-medium">
+  <div className="bg-card text-foreground/80 py-2 overflow-hidden border-b hairline" aria-label="Quick links" role="marquee">
+    <div className="flex gap-10 marquee whitespace-nowrap text-xs font-medium motion-reduce:animate-none">
       {[...items, ...items].map((t, i) => (
-        <a key={i} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors flex items-center gap-2">
-          <span className="w-1 h-1 rounded-full bg-gold/70" /> {t}
+        <a key={i} href={t.href} className="hover:text-gold transition-colors flex items-center gap-2">
+          <span className="w-1 h-1 rounded-full bg-gold/70" aria-hidden="true" /> {t.text}
         </a>
       ))}
     </div>

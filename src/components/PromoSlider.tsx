@@ -13,10 +13,14 @@ const slides = [
 
 const PromoSlider = () => {
   const [i, setI] = useState(0);
+  const [paused, setPaused] = useState(false);
   useEffect(() => {
+    if (paused) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
     const t = setInterval(() => setI((p) => (p + 1) % slides.length), 6000);
     return () => clearInterval(t);
-  }, []);
+  }, [paused]);
   return (
     <section className="container py-10">
       <div className="flex items-end justify-between mb-4">
@@ -26,10 +30,10 @@ const PromoSlider = () => {
         </div>
         <a href="/promotions" className="hidden md:inline-flex text-sm text-foreground/70 hover:text-gold transition-colors">View all →</a>
       </div>
-      <div className="relative rounded-lg overflow-hidden border hairline">
+      <div className="relative rounded-lg overflow-hidden border hairline" role="region" aria-roledescription="carousel" aria-label="Current promotions">
         <div className="relative aspect-[21/9] md:aspect-[24/8]">
           {slides.map((s, idx) => (
-            <div key={idx} className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}>
+            <div key={idx} aria-hidden={i !== idx} className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}>
               <img src={s.img} alt={s.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" width={1920} height={720} />
               <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-center p-6 md:p-12 max-w-xl">
@@ -43,10 +47,13 @@ const PromoSlider = () => {
             </div>
           ))}
         </div>
-        <button onClick={() => setI((i - 1 + slides.length) % slides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/70 border hairline flex items-center justify-center text-foreground/80 hover:text-gold backdrop-blur transition-colors">
+        <button aria-label="Previous promotion" onClick={() => { setI((i - 1 + slides.length) % slides.length); setPaused(true); }} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/70 border hairline flex items-center justify-center text-foreground/80 hover:text-gold backdrop-blur transition-colors">
           <ChevronLeft className="w-4 h-4" />
         </button>
-        <button onClick={() => setI((i + 1) % slides.length)} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/70 border hairline flex items-center justify-center text-foreground/80 hover:text-gold backdrop-blur transition-colors">
+        <button aria-label={paused ? "Resume automatic rotation" : "Pause automatic rotation"} onClick={() => setPaused(!paused)} className="absolute left-1/2 -translate-x-1/2 top-3 w-8 h-8 rounded-full bg-background/70 border hairline flex items-center justify-center text-foreground/80 hover:text-gold backdrop-blur transition-colors text-xs font-bold">
+          {paused ? "▶" : "❚❚"}
+        </button>
+        <button aria-label="Next promotion" onClick={() => { setI((i + 1) % slides.length); setPaused(true); }} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/70 border hairline flex items-center justify-center text-foreground/80 hover:text-gold backdrop-blur transition-colors">
           <ChevronRight className="w-4 h-4" />
         </button>
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">

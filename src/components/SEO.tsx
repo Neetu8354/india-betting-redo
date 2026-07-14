@@ -14,7 +14,7 @@ type Props = {
 
 const SITE = "https://www.yolo365info.live";
 
-const SEO = ({ title, description, canonical, image = `${SITE}/og-image.svg`, type = "website", publishedTime, modifiedTime, keywords, jsonLd }: Props) => {
+const SEO = ({ title, description, canonical, image = `${SITE}/og-image.jpg`, type = "website", publishedTime, modifiedTime, keywords, jsonLd }: Props) => {
   const url = canonical.startsWith("http") ? canonical : `${SITE}${canonical}`;
   const imgUrl = image.startsWith("http") ? image : `${SITE}${image}`;
   const ldArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
@@ -29,8 +29,9 @@ const SEO = ({ title, description, canonical, image = `${SITE}/og-image.svg`, ty
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={imgUrl} />
-      <meta property="og:site_name" content="YOLO365" />
-      <meta property="og:locale" content="en_IN" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
       {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
@@ -38,6 +39,7 @@ const SEO = ({ title, description, canonical, image = `${SITE}/og-image.svg`, ty
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imgUrl} />
+      <meta name="twitter:image:alt" content={title} />
 
       {ldArray.map((ld, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(ld)}</script>

@@ -117,3 +117,12 @@
 }
 .animate-pulse-gold { animation: pulse-gold 2s infinite; }
 .animate-pulse-wa { animation: pulse-wa 2s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .animate-pulse-gold,
+  .animate-pulse-wa {
+    animation: none !important;
+    transform: none !important;
+  }
+}

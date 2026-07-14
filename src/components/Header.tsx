@@ -1,5 +1,5 @@
-import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
-import { MessageCircle, Menu, X, User, Search } from "lucide-react";
+import { WHATSAPP_LINK } from "@/lib/wa";
+import { MessageCircle, Menu, X, User } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,56 +25,44 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {nav.map((n) =>
-            n.href ? (
-              <Link
-                key={n.label}
-                to={n.href}
-                className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-gold transition-colors"
-              >
-                {n.label}
-              </Link>
-            ) : (
-              <button
-                key={n.label}
-                onClick={openWhatsApp}
-                className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-gold transition-colors"
-              >
-                {n.label}
-              </button>
-            )
-          )}
+          {nav.map((n) => (
+            <Link
+              key={n.label}
+              to={n.href!}
+              className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-gold transition-colors"
+            >
+              {n.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-md text-foreground/60 hover:text-gold transition-colors" aria-label="Search">
-            <Search className="w-4 h-4" />
-          </a>
           <a href="/login" className="hidden md:inline-flex items-center gap-2 px-4 h-9 rounded-md border hairline text-foreground/85 hover:text-gold hover:border-gold/40 text-sm font-medium transition-colors">
             <User className="w-4 h-4" /> Login
           </a>
           <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 h-9 rounded-md bg-gold text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
             <MessageCircle className="w-4 h-4" /> Get ID
           </a>
-          <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-foreground/80">
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 text-foreground/80"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+          >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
       {open && (
-        <div className="lg:hidden border-t hairline bg-background">
+        <div id="mobile-navigation" className="lg:hidden border-t hairline bg-background">
           <div className="container py-3 flex flex-col">
-            {nav.map((n) =>
-              n.href ? (
-                <Link key={n.label} to={n.href} onClick={() => setOpen(false)} className="text-left py-2.5 text-sm font-medium text-foreground/80 hover:text-gold">
-                  {n.label}
-                </Link>
-              ) : (
-                <a key={n.label} href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-left py-2.5 text-sm font-medium text-foreground/80 hover:text-gold">
-                  {n.label}
-                </a>
-              )
-            )}
+            {nav.map((n) => (
+              <Link key={n.label} to={n.href!} onClick={() => setOpen(false)} className="text-left py-2.5 text-sm font-medium text-foreground/80 hover:text-gold">
+                {n.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}

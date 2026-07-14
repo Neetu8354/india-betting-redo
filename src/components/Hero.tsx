@@ -1,5 +1,5 @@
 import heroImg from "@/assets/hero-cricket.jpg";
-import { openWhatsApp, WHATSAPP_LINK } from "@/lib/wa";
+import { WHATSAPP_LINK } from "@/lib/wa";
 import { MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
 
           <div className="mt-6 sm:mt-10 inline-flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground self-start">
             <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-            Licensed · Encrypted · Trusted by 1M+ Indian players
+            Encrypted · 18+ only · Play responsibly
           </div>
         </div>
       </div>
@@ -44,10 +44,10 @@ const Hero = () => {
       <div className="border-t hairline bg-card/40">
         <div className="container grid grid-cols-2 md:grid-cols-4 divide-x hairline">
           {[
-            ["1M+", "Active players"],
-            ["₹100Cr+", "Paid out in 2025"],
-            ["24/7", "WhatsApp support"],
+            ["50+", "Markets per match"],
+            ["24/7", "Customer support"],
             ["60s", "ID activation"],
+            ["UPI", "Instant deposits"],
           ].map(([n, l]) => (
             <div key={l} className="py-5 px-4 text-center md:text-left">
               <div className="text-xl md:text-2xl font-semibold text-foreground tracking-tight">{n}</div>
