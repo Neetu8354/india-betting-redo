@@ -85,8 +85,30 @@ const Cricket = () => {
       "@context": "https://schema.org",
       "@type": "SportsEvent",
       name: "Indian Premier League 2026",
+      description: "The 19th season of the Indian Premier League featuring 10 franchise cricket teams competing in Twenty20 format across India.",
       sport: "Cricket",
-      location: { "@type": "Country", name: "India" },
+      startDate: "2026-03-21",
+      endDate: "2026-05-25",
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+      image: `${SITE}/assets/sport-cricket.jpg`,
+      location: {
+        "@type": "Place",
+        name: "Various Venues across India",
+        address: { "@type": "PostalAddress", addressCountry: "IN" },
+      },
+      organizer: {
+        "@type": "Organization",
+        name: "Board of Control for Cricket in India",
+        url: "https://www.bcci.tv",
+      },
+      performer: [
+        { "@type": "SportsTeam", name: "Mumbai Indians" },
+        { "@type": "SportsTeam", name: "Chennai Super Kings" },
+        { "@type": "SportsTeam", name: "Royal Challengers Bengaluru" },
+        { "@type": "SportsTeam", name: "Kolkata Knight Riders" },
+        { "@type": "SportsTeam", name: "Delhi Capitals" },
+      ],
       competitor: [
         { "@type": "SportsTeam", name: "Mumbai Indians" },
         { "@type": "SportsTeam", name: "Chennai Super Kings" },
@@ -94,6 +116,14 @@ const Cricket = () => {
         { "@type": "SportsTeam", name: "Kolkata Knight Riders" },
         { "@type": "SportsTeam", name: "Delhi Capitals" },
       ],
+      offers: {
+        "@type": "Offer",
+        url: `${SITE}/games/cricket-betting`,
+        availability: "https://schema.org/InStock",
+        price: "100",
+        priceCurrency: "INR",
+        validFrom: "2026-03-01",
+      },
     },
   ];
 
