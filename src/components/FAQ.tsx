@@ -11,10 +11,24 @@ const faqs = [
   { q: "Do you have live casino games?", a: "Teen Patti, Andar Bahar, Roulette, Dragon Tiger, Blackjack, Baccarat and 1,000+ slot games with live dealers." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
 const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="container py-16">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="text-center mb-10 max-w-2xl mx-auto">
         <div className="eyebrow mb-2">FAQ</div>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Frequently asked questions</h2>
