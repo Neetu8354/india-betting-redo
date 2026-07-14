@@ -17,16 +17,19 @@ export type GamePageProps = {
   intro: string;
   highlights: { title: string; desc: string }[];
   howToPlay: string[];
+  howToName?: string;
   strategyTitle: string;
   strategy: ReactNode;
   faqs: { q: string; a: string }[];
   relatedSlugs?: { slug: string; label: string }[];
   imageAlt: string;
+  heroImage?: string;
+  dateModified?: string;
 };
 
 const GamePageTemplate = ({
   slug, title, description, keywords, h1, intro,
-  highlights, howToPlay, strategyTitle, strategy, faqs, relatedSlugs = [], imageAlt,
+  highlights, howToPlay, howToName, strategyTitle, strategy, faqs, relatedSlugs = [], imageAlt, heroImage, dateModified = "2026-07-14",
 }: GamePageProps) => {
   const url = `${SITE}/games/${slug}`;
   const ld = [
@@ -39,14 +42,15 @@ const GamePageTemplate = ({
       description,
       inLanguage: "en-IN",
       isPartOf: { "@id": `${SITE}/#website` },
+      dateModified,
+      author: { "@type": "Organization", name: "YOLO365" },
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-        { "@type": "ListItem", position: 2, name: "Games", item: `${SITE}/games` },
-        { "@type": "ListItem", position: 3, name: h1, item: url },
+        { "@type": "ListItem", position: 2, name: h1, item: url },
       ],
     },
     {
@@ -61,7 +65,8 @@ const GamePageTemplate = ({
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      name: `How to play ${h1} on YOLO365`,
+      name: howToName || `How to Start ${h1.replace(/ on YOLO365/i, '')} on YOLO365`,
+      totalTime: "PT5M",
       step: howToPlay.map((s, i) => ({
         "@type": "HowToStep",
         position: i + 1,
@@ -78,7 +83,6 @@ const GamePageTemplate = ({
       <main className="container py-12">
         <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground mb-5">
           <Link to="/" className="hover:text-gold">Home</Link> <span className="mx-2">/</span>
-          <span className="text-foreground/60">Games</span> <span className="mx-2">/</span>
           <span className="text-foreground/80">{h1}</span>
         </nav>
 
@@ -92,7 +96,7 @@ const GamePageTemplate = ({
             <Link to="/blog" className="inline-flex items-center px-6 h-12 rounded-md border hairline hover:border-gold/40 font-medium">Read tips</Link>
           </div>
           <img
-            src="/placeholder.svg"
+            src={heroImage || "/placeholder.svg"}
             alt={imageAlt}
             width={1200}
             height={630}
@@ -103,7 +107,7 @@ const GamePageTemplate = ({
         </header>
 
         <section className="mb-14">
-          <h2 className="text-2xl font-bold mb-6">Why play {h1} on YOLO365</h2>
+          <h2 className="text-2xl font-bold mb-6">Why Choose YOLO365 for {h1.replace(/ on YOLO365/i, '')}</h2>
           <div className="grid md:grid-cols-3 gap-5">
             {highlights.map((h) => (
               <div key={h.title} className="p-6 rounded-xl border hairline bg-card/40">
@@ -116,7 +120,7 @@ const GamePageTemplate = ({
         </section>
 
         <section className="mb-14">
-          <h2 className="text-2xl font-bold mb-6">How to play {h1} on YOLO365</h2>
+          <h2 className="text-2xl font-bold mb-6">{howToName || `How to Start ${h1.replace(/ on YOLO365/i, '')} on YOLO365`}</h2>
           <ol className="space-y-3 max-w-3xl">
             {howToPlay.map((s, i) => (
               <li key={i} className="flex gap-3 p-4 rounded-md border hairline bg-card/30">
@@ -158,7 +162,7 @@ const GamePageTemplate = ({
         )}
 
         <section className="rounded-2xl border hairline bg-card/40 p-8 text-center">
-          <h2 className="text-2xl font-bold mb-2">Ready to play {h1}?</h2>
+          <h2 className="text-2xl font-bold mb-2">Ready to Start {h1.replace(/ on YOLO365/i, '')}?</h2>
           <p className="text-muted-foreground mb-5">Get your YOLO365 ID on WhatsApp in 60 seconds — instant UPI deposit, 5-min withdrawal.</p>
           <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex px-7 h-12 rounded-md bg-gold text-primary-foreground font-semibold hover:opacity-90">
             Get ID on WhatsApp

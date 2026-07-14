@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
     <url>
         <loc>https://www.yolo365info.live/</loc>
@@ -38,6 +39,10 @@
         <lastmod>2026-07-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.yolo365info.live/og-image.svg</image:loc>
+            <image:title>Online Cricket Betting in India — IPL, T20 &amp; Live Cricket Markets</image:title>
+        </image:image>
     </url>
 
     <url>
@@ -118,6 +123,27 @@
 
     <url>
         <loc>https://www.yolo365info.live/blog/dragon-tiger-live-casino-india</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://www.yolo365info.live/blog/cricket-betting-bankroll-management-india</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.yolo365info.live/blog/live-casino-india-evolution-ezugi-yolo365</loc>
+        <lastmod>2026-07-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://www.yolo365info.live/blog/kabaddi-betting-yolo365-pro-kabaddi-league</loc>
         <lastmod>2026-07-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
