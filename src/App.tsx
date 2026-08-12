@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import BonusPopup from "@/components/BonusPopup";
 import Index from "./pages/Index.tsx";
 
 const Blog = lazy(() => import("./pages/Blog.tsx"));
@@ -26,6 +27,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <BonusPopup />
         <BrowserRouter>
           <Suspense fallback={<div className="min-h-screen" />}>
             <Routes>
