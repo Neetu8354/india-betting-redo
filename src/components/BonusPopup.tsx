@@ -26,14 +26,15 @@ const BonusPopup = () => {
 
       {/* Centered Popup */}
       <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-        <div className="bg-gradient-to-br from-card to-card/80 border border-gold/30 rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+        <div className="relative bg-gradient-to-br from-card to-card/80 border border-gold/30 rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden animate-in fade-in zoom-in-95 duration-300">
           {/* Close Button */}
           <button
             onClick={() => setIsVisible(false)}
-            className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg transition-colors z-10"
+            className="absolute top-3 right-3 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 flex items-center justify-center"
             aria-label="Close popup"
+            type="button"
           >
-            <X className="w-5 h-5 text-foreground/60 hover:text-foreground" />
+            <X className="w-6 h-6 text-foreground" />
           </button>
 
           {/* Content */}
@@ -62,6 +63,15 @@ const BonusPopup = () => {
             >
               CLICK HERE — WHATSAPP
             </a>
+
+            {/* Cancel Button */}
+            <button
+              onClick={() => setIsVisible(false)}
+              className="w-full px-6 py-3 rounded-xl border border-foreground/20 text-foreground/70 font-semibold hover:bg-white/5 hover:text-foreground transition-all duration-200"
+              type="button"
+            >
+              CANCEL
+            </button>
 
             {/* Subtle Footer */}
             <p className="text-xs text-foreground/50">
